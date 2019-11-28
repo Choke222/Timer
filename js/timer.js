@@ -51,50 +51,17 @@
         timerId = setTimeout(function() {
             if(isRunning_0sec == false){
                 timeLeft = timeToCountdown - (Date.now() -startTime);
-            }else{
-                // console.log("over" + Date.now())
+            }else{ 
                 timeLeft = (Date.now() -zerosecTime);
                 timer.style.color = "red";
-                // if(timeLeft > 10000){//60000
-                    
-                    // p = (timeLeft / 10000)/10;
-                    // p = Math.round(p * 100) / 100;
-                    // // console.log("t:"+timeLeft)
-                    // console.log("p:"+p)
-                // }
             }
-            // if(timeLeft < 0){
-            //     isRunning = false;
-            //     // music.pause();
-            //     music.src = "audio/gong.mp3";
-            //     music.play();
-            //     // new_music.src = "audio/gong.mp3";
-            //     // new_music.play();
-            //     start.textContent ='Start';
-            //     clearTimeout(timerId);
-            //     timeLeft = 0;
-            //     timeToCountdown = 0;
-            //     updateTimer(timeLeft);
-            //     console.log("test")
-            //     return;
-            // }
             
             if((timeLeft < 0)&&(isRunning_0sec == false)){
                 console.log("0.0sec")
-                // isRunning = false;
                 isRunning_0sec = true;
-                // music.pause();
-                // new_music.src = "audio/gong.mp3";
                 new_music.play();
-                // new_music.src = "audio/gong.mp3";
-                // new_music.play();
-                // start.textContent ='Start';
-                // clearTimeout(timerId);
                 timeLeft = 0;
-                // timeToCountdown = 0;
-                // updateTimer(timeLeft);
-                zerosecTime =Date.now()
-                // return;
+                zerosecTime = Date.now();
             }
 
         //    if(timeLeft < (10000)){//10秒以下で赤点滅
@@ -133,10 +100,6 @@
              clearTimeout(timerId);
              music.pause();
          }
-         
-        //  music.play();
-        // music = new Audio();
-        // music.src = "aux-enfers.mp3";
       
      });
      reset.addEventListener('click',function(){
