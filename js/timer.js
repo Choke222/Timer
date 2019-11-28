@@ -61,10 +61,6 @@
                     music.play();
                 }
                 isRunning_last = true;
-                // music.pause();
-                // new_music.play();
-                
-
            }
          
             if(timeLeft == 0){//10秒以下で赤点滅
