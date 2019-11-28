@@ -21,7 +21,8 @@
     music.loop = true;
     
     new_music = new Audio();
-    new_music.src = "audio/gong.wav";
+    new_music.src = "audio/gong.mp3";
+    new_music.loop = true;
     
     function updateTimer(t){
         var d = new Date(t);
@@ -122,6 +123,7 @@
      reset.addEventListener('click',function(){
          timeToCountdown = 0;
          music.pause();
+         new_music.pause();
          updateTimer(timeToCountdown);
      });
  
