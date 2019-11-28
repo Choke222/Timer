@@ -38,7 +38,13 @@
         s = ('0' + s).slice(-2);
         ms = ('00' + ms).slice(-3);
         timer.textContent = h + ':' + m + ':' + s + '.' + ms;
-        point.textContent = 'Point:' + p;
+        
+        // if(isRunning_0sec == true){
+        //     p = (timeLeft / 10000)/10;
+        //     p = Math.round(p * 100) / 100;
+        //     console.log("p:"+p)
+        // }
+        // point.textContent = 'Point:' + p.toFixed(1);
     }
  
     function countDown(){
@@ -46,12 +52,16 @@
             if(isRunning_0sec == false){
                 timeLeft = timeToCountdown - (Date.now() -startTime);
             }else{
-                console.log("over" + Date.now())
+                // console.log("over" + Date.now())
                 timeLeft = (Date.now() -zerosecTime);
-                if(timeLeft > 5000){//60000
+                timer.style.color = "red";
+                // if(timeLeft > 10000){//60000
                     
-                    p -= 0.1;
-                }
+                    // p = (timeLeft / 10000)/10;
+                    // p = Math.round(p * 100) / 100;
+                    // // console.log("t:"+timeLeft)
+                    // console.log("p:"+p)
+                // }
             }
             // if(timeLeft < 0){
             //     isRunning = false;
@@ -71,7 +81,7 @@
             
             if((timeLeft < 0)&&(isRunning_0sec == false)){
                 console.log("0.0sec")
-                isRunning = false;
+                // isRunning = false;
                 isRunning_0sec = true;
                 // music.pause();
                 // new_music.src = "audio/gong.mp3";
@@ -88,7 +98,7 @@
             }
 
         //    if(timeLeft < (10000)){//10秒以下で赤点滅
-           if(timeLeft < (300000)){//5分以下で赤点滅
+           if((timeLeft < (300000)&&(isRunning_0sec == false))){//5分以下で赤点滅
                 timer.style.color = timeLeft%500<250?"red":"black";
                 if(isRunning_last === false){
                     music.src = "audio/aux-enfers.mp3";
@@ -129,6 +139,12 @@
         // music.src = "aux-enfers.mp3";
       
      });
+     reset.addEventListener('click',function(){
+        timeToCountdown = 0;
+        music.pause();
+       //  new_music.pause();
+        updateTimer(timeToCountdown);
+    });
      hour.addEventListener('click',function(){
         if(isRunning === true){
             return;
@@ -153,11 +169,4 @@
         
          updateTimer(timeToCountdown);
      });
-     reset.addEventListener('click',function(){
-         timeToCountdown = 0;
-         music.pause();
-        //  new_music.pause();
-         updateTimer(timeToCountdown);
-     });
- 
  })();
