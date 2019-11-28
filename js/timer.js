@@ -43,15 +43,17 @@
             
             if(timeLeft < 0){
                 isRunning = false;
+                // music.pause();
+                music.src = "audio/aux-enfers.mp3";
+                music.play();
+                // new_music.src = "audio/gong.mp3";
+                // new_music.play();
                 start.textContent ='Start';
                 clearTimeout(timerId);
                 timeLeft = 0;
                 timeToCountdown = 0;
                 updateTimer(timeLeft);
                 console.log("test")
-                music.pause();
-                // new_music.src = "audio/gong.mp3";
-                new_music.play();
                 return;
             }
 
