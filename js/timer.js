@@ -17,7 +17,7 @@
     var music;
     var flag=0;
     music = new Audio();
-    music.src = "../audio/main.mp3";
+    music.src = "audio/main.mp3";
     music.loop = true;
     
     new_music = new Audio();
@@ -48,7 +48,7 @@
                 updateTimer(timeLeft);
                 console.log("test")
                 music.pause();
-                new_music.src = "../audio/gong.mp3";
+                new_music.src = "audio/gong.mp3";
                 new_music.play();
                 return;
             }
@@ -56,7 +56,7 @@
            if(timeLeft < 10000){//10秒以下で赤点滅
                 timer.style.color = timeLeft%500<250?"red":"black";
                 if(isRunning_last === false){
-                    music.src = "../audio/aux-enfers.mp3";
+                    music.src = "audio/aux-enfers.mp3";
                     console.log("last10min")
                     music.play();
                 }
@@ -70,7 +70,7 @@
             if(timeLeft == 0){//10秒以下で赤点滅
                 //終了のチャイムを鳴らす
                 console.log("end")
-                new_music.src = "../audio/gong.mp3";
+                new_music.src = "audio/gong.mp3";
                 new_music.play();
             }
 
