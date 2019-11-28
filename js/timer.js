@@ -9,20 +9,23 @@
     var start = document.getElementById('start');
  
     var startTime;
+    var zerosecTime;
     var timeLeft;
     var timeToCountdown = 0;
     var timerId;
     var isRunning = false;
+    var isRunning_0sec = false;
     var isRunning_last = false;
     var music;
     var flag=0;
+    var p=0;
     music = new Audio();
     music.src = "audio/main.mp3";
     music.loop = true;
     
     new_music = new Audio();
     new_music.src = "audio/gong.mp3";
-    new_music.loop = true;
+    // new_music.loop = true;
     
     function updateTimer(t){
         var d = new Date(t);
@@ -35,26 +38,53 @@
         s = ('0' + s).slice(-2);
         ms = ('00' + ms).slice(-3);
         timer.textContent = h + ':' + m + ':' + s + '.' + ms;
+        point.textContent = 'Point:' + p;
     }
  
     function countDown(){
         timerId = setTimeout(function() {
-            timeLeft = timeToCountdown - (Date.now() -startTime);
+            if(isRunning_0sec == false){
+                timeLeft = timeToCountdown - (Date.now() -startTime);
+            }else{
+                console.log("over" + Date.now())
+                timeLeft = (Date.now() -zerosecTime);
+                if(timeLeft > 5000){//60000
+                    
+                    p -= 0.1;
+                }
+            }
+            // if(timeLeft < 0){
+            //     isRunning = false;
+            //     // music.pause();
+            //     music.src = "audio/gong.mp3";
+            //     music.play();
+            //     // new_music.src = "audio/gong.mp3";
+            //     // new_music.play();
+            //     start.textContent ='Start';
+            //     clearTimeout(timerId);
+            //     timeLeft = 0;
+            //     timeToCountdown = 0;
+            //     updateTimer(timeLeft);
+            //     console.log("test")
+            //     return;
+            // }
             
-            if(timeLeft < 0){
+            if((timeLeft < 0)&&(isRunning_0sec == false)){
+                console.log("0.0sec")
                 isRunning = false;
+                isRunning_0sec = true;
                 // music.pause();
-                music.src = "audio/gong.mp3";
-                music.play();
+                // new_music.src = "audio/gong.mp3";
+                new_music.play();
                 // new_music.src = "audio/gong.mp3";
                 // new_music.play();
-                start.textContent ='Start';
-                clearTimeout(timerId);
+                // start.textContent ='Start';
+                // clearTimeout(timerId);
                 timeLeft = 0;
-                timeToCountdown = 0;
-                updateTimer(timeLeft);
-                console.log("test")
-                return;
+                // timeToCountdown = 0;
+                // updateTimer(timeLeft);
+                zerosecTime =Date.now()
+                // return;
             }
 
         //    if(timeLeft < (10000)){//10秒以下で赤点滅
