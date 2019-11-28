@@ -1,0 +1,70 @@
+body {
+    /*margin: 0;*/
+    font-family: 'Courier New',sans-serif;
+    font-size: 100%;
+    background:#eee;
+}
+.container {
+    text-align: center;
+    /* width: 1200px;
+    height: 700px; */
+    width: 90%;
+    height: 50%;
+    /* background:#fff; */
+    /* padding: 15px; */
+    /* padding: 2%; */
+    /* margin: 20px auto; */
+    /* margin: 2% auto; */
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    margin-left : auto;
+    border-radius: 200px;
+
+}
+
+#timer {
+    /* height: 600px; */
+    /* height: 100%; */
+    width: 100%;
+    /* font-size: 200px; */
+    font-size: 1000%;
+    background:#F4EB9D;
+    /* line-height: 600px; */
+    /* line-height: 2000%; */
+    /* margin-bottom: 15px; */
+    margin-top: 20%;
+    /* margin-bottom: 2%; */
+    text-align: center;
+    margin-right: auto;
+    margin-left : auto;
+    border-radius: 200px;
+}
+
+.controls{
+    font-size: 400%;
+    /* width: 100%; */
+}
+
+#hour{
+    font-size: 30%;;
+}
+
+#min{
+    font-size: 30%;;
+}
+#sec{
+    font-size: 30%;;
+}
+#reset{
+    font-size: 30%;;
+}
+#start{
+    font-size: 30%;;
+}
+
+body { 
+    background-image: url(back.png);
+    background-repeat: no-repeat;
+    background-size:cover;
+}
