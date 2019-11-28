@@ -57,7 +57,8 @@
                 return;
             }
 
-           if(timeLeft < 10000){//10秒以下で赤点滅
+        //    if(timeLeft < (10000)){//10秒以下で赤点滅
+           if(timeLeft < (300000)){//5分以下で赤点滅
                 timer.style.color = timeLeft%500<250?"red":"black";
                 if(isRunning_last === false){
                     music.src = "audio/aux-enfers.mp3";
