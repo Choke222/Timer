@@ -125,7 +125,7 @@
      reset.addEventListener('click',function(){
          timeToCountdown = 0;
          music.pause();
-         new_music.pause();
+        //  new_music.pause();
          updateTimer(timeToCountdown);
      });
  
