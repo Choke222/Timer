@@ -49,7 +49,7 @@
                 updateTimer(timeLeft);
                 console.log("test")
                 music.pause();
-                new_music.src = "audio/gong.mp3";
+                // new_music.src = "audio/gong.mp3";
                 new_music.play();
                 return;
             }
