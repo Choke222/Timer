@@ -21,6 +21,7 @@
     music.loop = true;
     
     new_music = new Audio();
+    new_music.src = "audio/gong.wav";
     
     function updateTimer(t){
         var d = new Date(t);
@@ -66,7 +67,6 @@
             if(timeLeft == 0){//10秒以下で赤点滅
                 //終了のチャイムを鳴らす
                 console.log("end")
-                new_music.src = "audio/gong.mp3";
                 new_music.play();
             }
 
