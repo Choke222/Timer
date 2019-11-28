@@ -44,7 +44,7 @@
             if(timeLeft < 0){
                 isRunning = false;
                 // music.pause();
-                music.src = "audio/aux-enfers.mp3";
+                music.src = "audio/gong.mp3";
                 music.play();
                 // new_music.src = "audio/gong.mp3";
                 // new_music.play();
